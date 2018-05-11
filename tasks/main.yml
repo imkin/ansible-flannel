@@ -1,5 +1,4 @@
 ---
-# tasks file for ansible-flannel
 - name: Create systemd drop-in directory
   file: path={{flanneld_dropin_dir}} state=directory mode=0755
   become: yes
@@ -32,3 +31,5 @@
   template: src=40-flannel.conf dest={{docker_dropin_dir}}/40-flannel.conf
   notify:
     - Reload systemd
+
+

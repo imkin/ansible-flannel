@@ -3,7 +3,6 @@
   become: yes
   command: systemctl daemon-reload
   notify:
-    - Stop flannel
     - Start flannel
     - Reconfigure docker
 
